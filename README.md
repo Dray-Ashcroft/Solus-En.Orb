@@ -6,7 +6,7 @@
 
 ### *Energy Pyramid Simulator*
 
-> **Solus EnergyOrb** is an interactive visualization exploring **energy flow, trophic levels, heat loss, biomass transfer, and nutrient cycling** within an ecosystem.
+> **Solus EnergyOrb** is an interactive visualization of **energy flow, trophic levels, biomass, heat loss, and nutrient cycling** in an ecosystem.
 >
 🌱 **Ecosystem** · ☀️ **Energy Flow** · 🔬 **Trophic Levels**
 
@@ -17,31 +17,25 @@
 ## ✦ Features
 
 **☀️ Solar Energy Input**  
-Activate the Sun to visualize **PAR (Photosynthetically Active Radiation)** reaching producers and initiating energy flow through the ecosystem.
+Visualize PAR reaching producers and initiating energy flow.
 
-**🔺 Trophic-Level Visualization**  
-Explore energy transfer across **four trophic levels (TL1–TL4)** through an interactive energy pyramid.
+**🔺 Trophic Levels**  
+Explore energy transfer across four trophic levels.
 
-**⚡ Energy Transfer & Loss**  
-Follow energy as it moves upward through trophic levels, with progressively less energy available at each stage.
+**⚡ Energy, Heat & Biomass**  
+Track changes in energy, heat loss, and biomass across trophic levels.
 
-**🔥 Heat & Biomass Tracking**  
-Switch between **Energy, Heat, and Biomass** views to visualize how these quantities change across trophic levels.
+**♻️ Nutrient Cycling**  
+Visualize detritus, decomposition, and nutrient return to producers.
 
-**♻️ Detritus & Nutrient Cycling**  
-Explore how waste and dead organic matter move towards decomposers, while nutrients return to producers.
-
-**🧭 Guided Energy-Flow Walkthrough**  
-A seven-step interactive sequence demonstrates how energy and matter move through the ecosystem.
-
-**🎴 Interactive Learning Interface**  
-A focused dark interface combines ecosystem geometry, organism cards, animated energy pathways, and real-time measurements.
+**🧭 Guided Walkthrough**  
+Follow a seven-step visualization of energy and matter movement.
 
 ---
 
 ## 🌱 Core Concepts
 
-**Ecosystem · Producers · Consumers · Trophic Levels · Energy Flow · PAR · Heat Loss · Biomass · Decomposers · Detritus · Nutrient Cycling · Energy Pyramid**
+**Ecosystem · Energy Flow · Trophic Levels · PAR · Biomass · Heat Loss · Decomposers · Detritus · Nutrient Cycling**
 
 ---
 
