@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Solus EnergyOrb — Energy Pyramid Simulator" width="100%">
+  <img src="assets/banner.jpg" alt="Solus EnergyOrb — Energy Pyramid Simulator" width="100%">
 </p>
 
 # ☀️ Solus EnergyOrb
