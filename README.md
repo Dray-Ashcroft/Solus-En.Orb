@@ -10,7 +10,7 @@
 >
 🌱 **Ecosystem** · ☀️ **Energy Flow** · 🔬 **Trophic Levels**
 
-**🔬 [Explore the Simulation]([YOUR_CLOUDFLARE_LINK_HERE)](https://solus-en-orb.stark-kodex.workers.dev)**
+**🔬 [Explore the Simulation](https://solus-en-orb.stark-kodex.workers.dev)**
 
 ---
 
