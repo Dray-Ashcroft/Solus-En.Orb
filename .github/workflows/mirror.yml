@@ -2,8 +2,10 @@ name: Mirror to Codeberg
 
 on:
   push:
-    branches: ["**"]
-    tags: ["**"]
+    branches:
+      - "**"
+    tags:
+      - "**"
   workflow_dispatch:
 
 jobs:
@@ -16,9 +18,28 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Mirror to Codeberg
-        uses: cssnr/mirror-repository-action@v1
-        with:
-          host: https://codeberg.org
-          username: Dray-Ashcroft
-          password: ${{ secrets.CODEBERG_TOKEN }}
+      - name: Mirror repository to Codeberg
+        env:
+          CODEBERG_USERNAME: Dray-Ashcroft
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "$CODEBERG_TOKEN" ]; then
+            echo "::error::CODEBERG_TOKEN is not configured"
+            exit 1
+          fi
+
+          repo="${GITHUB_REPOSITORY#*/}"
+          target="https://codeberg.org/${CODEBERG_USERNAME}/${repo}.git"
+
+          # Store credentials only for this job.
+          git config --global credential.helper store
+          trap 'rm -f "$HOME/.git-credentials"' EXIT
+          printf 'https://%s:%s@codeberg.org\n' \
+            "$CODEBERG_USERNAME" "$CODEBERG_TOKEN" > "$HOME/.git-credentials"
+
+          git remote remove codeberg 2>/dev/null || true
+          git remote add codeberg "$target"
+
+          git push --mirror codeberg
