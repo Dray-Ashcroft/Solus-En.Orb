@@ -2,23 +2,24 @@ name: Mirror to Codeberg
 
 on:
   push:
-    branches: ["**"]
-    tags: ["**"]
-  workflow_dispatch:
+    branches:
+      - '**'
+  delete:
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Mirror repository to Codeberg
+        env:
+          CODEBERG_USERNAME: ${{ secrets.CODEBERG_USERNAME }}
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+        run: |
+          git clone --mirror "https://github.com/${{ github.repository }}.git" repo.git
+          cd repo.git
 
-      - name: Mirror to Codeberg
-        uses: cssnr/mirror-repository-action@v1
-        with:
-          host: https://codeberg.org
-          username: Dray-Ashcroft
-          password: ${{ secrets.CODEBERG_TOKEN }}
+          git remote set-url --push origin \
+            "https://${CODEBERG_USERNAME}:${CODEBERG_TOKEN}@codeberg.org/${CODEBERG_USERNAME}/${GITHUB_REPOSITORY#*/}.git"
+
+          git push --mirror
